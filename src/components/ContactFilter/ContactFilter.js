@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import contactsActions from "../../redux/phoneBook/phoneBook-actions";
+import * as contactsActions from "../../redux/phoneBook/phoneBook-actions";
 import styles from './ContactFilter.module.css';
 
 const ContactFilter = ({ value, onChange }) => (
