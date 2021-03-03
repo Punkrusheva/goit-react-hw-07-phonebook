@@ -38,8 +38,15 @@ const loading = createReducer(false, {
     [deleteContactError]: () => false,
 });
 
+const error = createReducer(null, {
+    [fetchContactError]: () => alert('Ошибка добтупа к данным!'),
+    [addContactError]: () => alert('Ошибка добавления контакта!'),
+    [deleteContactError]: () => alert('Ошибка удаления контакта!'),
+});
+
 export default combineReducers({
     items,
     filter,
     loading,
+    error,
 });

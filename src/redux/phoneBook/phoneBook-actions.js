@@ -13,12 +13,3 @@ export const deleteContactSuccess = createAction('contacts/deleteContactSuccess'
 export const deleteContactError = createAction('contacts/deleteContactError');
 
 export const changeFilter = createAction('contacts/changeFilter')
-
-/*export default {
-        addContactRequest,
-        addContactSuccess,
-        addContactError,
-        addContact,
-        deleteContact,
-        changeFilter
-};*/

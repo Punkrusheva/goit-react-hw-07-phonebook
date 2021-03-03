@@ -30,7 +30,7 @@ ContactListItem.defaultProps = {
 ContactListItem.propTypes = {
   number: PropTypes.string,
   name: PropTypes.string,
-    id: PropTypes.string
+    id: PropTypes.number.isRequired
 };
 
 export default ContactListItem;
