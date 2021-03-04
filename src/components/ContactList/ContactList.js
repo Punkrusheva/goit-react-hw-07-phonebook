@@ -6,6 +6,7 @@ import styles from './ContactList.module.css';
 import ContactListItem from "../ContactListItem/ContactListItem";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import "../../stylesheets/animation.css";
+import contactsSelectors from "../../redux/phoneBook/phoneBook-selectors";
 
 function ContactList({ contacts, onRemoveContact }) {
   return (<>
@@ -38,16 +39,8 @@ ContactList.propTypes = {
   ))
 };
 
-const getVisibleContacts = (allContacts, filter) => {
-  const normalizedFilter = filter.toLowerCase().trim();
-  
-    return allContacts.filter(contact =>
-      contact.name.toLowerCase().includes(normalizedFilter),
-    );
-};
-
-const mapStateToProps = ({contacts: {items, filter}}) => ({
-    contacts: getVisibleContacts(items, filter)
+const mapStateToProps = (state) => ({
+    contacts: contactsSelectors.getVisibleContacts(state)
 }
 );
 

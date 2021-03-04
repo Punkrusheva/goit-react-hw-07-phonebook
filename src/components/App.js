@@ -7,6 +7,7 @@ import ContactFilter from './ContactFilter/ContactFilter';
 import "../stylesheets/animation.css";
 import { ToastContainer } from "react-toastify";
 import contactsOperations from "../redux/phoneBook/phoneBook-operations";
+import contactsSelectors from "../redux/phoneBook/phoneBook-selectors";
 
 class App extends Component {
 
@@ -28,7 +29,7 @@ class App extends Component {
 };
 
 const mapStateToProps = state => ({
-  isLoadingContacts: state.contacts.loading,
+  isLoadingContacts: contactsSelectors.getLoading(state),
 })
 
 const mapDispatchToProps = dispatch => ({
