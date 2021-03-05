@@ -38,10 +38,10 @@ const loading = createReducer(false, {
     [deleteContactError]: () => false,
 });
 
-const error = createReducer(null, {
-    [fetchContactError]: () => alert('Ошибка добтупа к данным!'),
-    [addContactError]: () => alert('Ошибка добавления контакта!'),
-    [deleteContactError]: () => alert('Ошибка удаления контакта!'),
+const error = createReducer('', {
+    [fetchContactError]: () => 'Ошибка доcтупа к данным!',
+    [addContactError]: () => 'Ошибка добавления контакта!',
+    [deleteContactError]: () => 'Ошибка удаления контакта!',
 });
 
 export default combineReducers({

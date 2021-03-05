@@ -6,8 +6,7 @@ import ContactForm from './ContactForm/ContactForm';
 import ContactFilter from './ContactFilter/ContactFilter';
 import "../stylesheets/animation.css";
 import { ToastContainer } from "react-toastify";
-import contactsOperations from "../redux/phoneBook/phoneBook-operations";
-import contactsSelectors from "../redux/phoneBook/phoneBook-selectors";
+import { contactsOperations, contactsSelectors } from "../redux/phoneBook/";
 
 class App extends Component {
 
@@ -22,6 +21,7 @@ class App extends Component {
         <ContactFilter/>
         <ToastContainer autoClose={2500} />
         {this.props.isLoadingContacts && <h1>Загружаю...</h1>}
+        {this.props.isErrorContacts && alert(`${this.props.isErrorContacts}`)}
         <ContactList />
       </Layout>
     );
@@ -30,6 +30,7 @@ class App extends Component {
 
 const mapStateToProps = state => ({
   isLoadingContacts: contactsSelectors.getLoading(state),
+  isErrorContacts: contactsSelectors.getError(state),
 })
 
 const mapDispatchToProps = dispatch => ({

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import contactsOperations from '../../redux/phoneBook/phoneBook-operations'
+import { contactsOperations } from "../../redux/phoneBook/index";
 import shortid from 'shortid';
 import styles from './ContactForm.module.css';
 import { CSSTransition } from "react-transition-group";
@@ -16,24 +16,6 @@ class ContactForm extends Component {
  
   nameInputId = shortid.generate();
   numberInputId = shortid.generate();
-
-  /*componentDidMount() {
-    console.log('componentDidMount');
-    const contacts = localStorage.getItem('contacts');
-    const parsedContacts = JSON.parse(contacts);
-    console.log(parsedContacts);
-
-    if (parsedContacts) {
-      this.setState({ contacts: parsedContacts });
-    }
-  };
-
-  componentDidUpdate(prevState) {
-    console.log('componentDidUpdate');
-    if (this.state.contacts !== prevState.contacts) {
-      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
-      }
-  };*/
 
   handleChange = e => {
     const { name, value } = e.currentTarget;
