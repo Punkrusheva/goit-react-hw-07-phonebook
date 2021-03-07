@@ -40,7 +40,7 @@ const deleteContact = contactId => async dispatch => {
     dispatch(deleteContactRequest());
 
     try {
-        const {_} = await axios.delete(`/contacts/${contactId}`);
+       await axios.delete(`/contacts/${contactId}`);
         dispatch(deleteContactSuccess(contactId))
     }  catch (error) {
         dispatch(deleteContactError(error));
